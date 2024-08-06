@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 export default function TextForm(props) {
     const [text, setText] = useState("");
     const handleOnChange = (event) => {
@@ -7,7 +6,7 @@ export default function TextForm(props) {
         setText(newText);
         if (text.length > 20) {
             setText(event.target.value.slice(0, -2))
-            alert("Max allowed characters are "+ (text.length-1));
+            props.showAlert(`Max ${text.length - 1} characters are allowed`, "warning");
         }
     }
   return (
