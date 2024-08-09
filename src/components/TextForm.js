@@ -13,9 +13,8 @@ export default function TextForm(props) {
     <>
     <div className="container">
     <div className="mb-3 pt-2">
-    <center><h1>{props.heading}</h1></center>
     <textarea className="form-control" id="textBox" rows="5" placeholder="Enter Text" onChange={handleOnChange} value={text}></textarea>
-    <p>Words: {text.split(" ").length}<br />Characters: {text.length}</p>
+    <p>Words: {text.split(" ").filter((elem) => {return elem.length!==0}).length}<br />Characters: {text.length}</p>
     </div>
     </div>
     </>
